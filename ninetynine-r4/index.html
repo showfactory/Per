@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Showfactory per Ninetynine</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Showfactory, reparto produzione esterno per Ninetynine.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..500&family=Inter:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  /* Layout: Showfactory al centro. Hero con tesi per ruolo, quattro problemi→soluzioni, formati, officina, processo, call. */
+  :root{
+    color-scheme:dark;
+    --bg:#0F1418;
+    --bg-2:#151C21;
+    --bg-3:#1C252B;
+    --ink:#F5F2EC;
+    --muted:#A3ABB2;
+    --faint:#6F7A83;
+    --line:rgba(245,242,236,.13);
+    --gold:#C9A96A;
+    --gold-2:#E3CE9E;
+    --gold-soft:rgba(201,169,106,.13);
+    --risk:#E8836B;
+    --risk-soft:rgba(232,131,107,.14);
+    --ok:#9FBF8F;
+    --serif:'Fraunces',Georgia,'Times New Roman',serif;
+    --sans:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;
+    --mono:'IBM Plex Mono',ui-monospace,'SFMono-Regular',Menlo,monospace;
+    --ease:cubic-bezier(.22,1,.36,1);
+    --maxw:1180px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth;background:var(--bg)}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-weight:300;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  img{max-width:100%;display:block}
+  a{color:inherit}
+  p{margin:0}
+  h1,h2,h3,h4{font-family:var(--serif);font-weight:300;letter-spacing:-.015em;text-wrap:balance;margin:0}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+  @media(min-width:700px){.wrap{padding-left:max(40px,env(safe-area-inset-left,0px));padding-right:max(40px,env(safe-area-inset-right,0px))}}
+  .eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
+  .btn{display:inline-flex;align-items:center;gap:10px;padding:15px 26px;border-radius:100px;font-family:var(--sans);font-size:14.5px;letter-spacing:.02em;border:1px solid var(--line);background:none;color:var(--ink);cursor:pointer;text-decoration:none;transition:background .3s var(--ease),border-color .3s,transform .3s var(--ease),color .3s}
+  .btn:hover{border-color:var(--ink);transform:translateY(-2px)}
+  .btn-gold{background:var(--gold);border-color:var(--gold);color:#0F1418;font-weight:500}
+  .btn-gold:hover{background:var(--gold-2);border-color:var(--gold-2)}
+  :focus-visible{outline:2px solid var(--gold-2);outline-offset:3px}
+  section{position:relative}
+  .band{padding-block:clamp(64px,10vh,116px);border-top:1px solid var(--line)}
+  .head{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,4vw,56px);align-items:end;margin-bottom:clamp(30px,5vh,50px)}
+  .head > *{min-width:0}
+  .head h2{font-size:clamp(30px,4.2vw,54px);line-height:1.04}
+  .head h2 em,.hero h1 em,.cta h2 em{font-style:italic;color:var(--gold-2)}
+  .head p{color:var(--muted);max-width:50ch;font-size:16px}
+
+  /* TOP */
+  .top{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-block:22px;flex-wrap:wrap}
+  .brand{font-family:var(--serif);font-size:21px}
+  .brand b{color:var(--gold);font-weight:400}
+  .for{font-family:var(--mono);font-size:11.5px;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;display:flex;align-items:center;gap:8px}
+  .for i{width:7px;height:7px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 4px var(--gold-soft)}
+
+  /* HERO */
+  .hero{display:grid;grid-template-columns:1.08fr .92fr;gap:clamp(28px,5vw,64px);align-items:center;padding-block:clamp(16px,4vh,48px) clamp(48px,8vh,90px)}
+  .hero > *{min-width:0}
+  .hero h1{font-size:clamp(40px,6vw,80px);line-height:1.01;margin-top:18px}
+  .hello{margin-top:26px;font-size:clamp(16px,1.4vw,18px);color:var(--muted);max-width:54ch}
+  .hello strong{color:var(--ink);font-weight:500}
+  .focus{margin-top:20px;display:flex;gap:12px;align-items:flex-start;border:1px solid var(--line);border-radius:14px;padding:14px 16px;max-width:54ch;background:var(--bg-2)}
+  .focus span{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);white-space:nowrap;padding-top:3px}
+  .focus p{font-size:15px;color:var(--ink)}
+  .hero-actions{margin-top:28px;display:flex;gap:12px;flex-wrap:wrap}
+  .hero-pic{position:relative;border-radius:18px;overflow:hidden;aspect-ratio:4/5;max-width:100%;background:var(--bg-3);box-shadow:0 30px 80px rgba(0,0,0,.45)}
+  .hero-pic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .hero-pic::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(10,13,16,.9))}
+  .stamp{position:absolute;left:18px;right:18px;bottom:18px;z-index:2;display:grid;gap:4px}
+  .stamp b{font-family:var(--serif);font-weight:400;font-size:21px}
+  .stamp span{font-size:13px;color:var(--muted)}
+  .stamp em{font-style:normal;font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold)}
+
+  .facts{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;padding-block:28px 0}
+  .fact b{display:block;font-family:var(--serif);font-weight:300;font-size:clamp(32px,4vw,52px);line-height:1;color:var(--gold-2);font-variant-numeric:tabular-nums}
+  .fact span{display:block;margin-top:8px;font-size:13.5px;color:var(--muted);max-width:26ch}
+
+  /* PROBLEMI */
+  .probs{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+  .prob{border:1px solid var(--line);border-radius:16px;overflow:hidden;display:grid;grid-template-rows:auto 1fr;min-width:0}
+  .prob .q{padding:22px 24px;background:var(--bg-2);border-bottom:1px solid var(--line)}
+  .prob .q small{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);margin-bottom:8px}
+  .prob .q p{font-family:var(--serif);font-size:21px;line-height:1.25;color:var(--muted);font-style:italic}
+  .prob .a{padding:22px 24px;display:grid;gap:8px;align-content:start}
+  .prob .a small{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold)}
+  .prob .a h3{font-size:22px;line-height:1.2}
+  .prob .a p{color:var(--muted);font-size:15px}
+  .prob .a p strong{color:var(--ink);font-weight:500}
+  .prob.hl{border-color:rgba(201,169,106,.6);box-shadow:0 0 0 1px rgba(201,169,106,.25)}
+  .prob.hl .q small::after{content:" · per il tuo ruolo";color:var(--gold)}
+
+  /* FORMATI */
+  .formats{display:grid;gap:14px}
+  .fmt{display:grid;grid-template-columns:260px 1fr;gap:0;border:1px solid var(--line);border-radius:16px;overflow:hidden;min-height:190px}
+  .fmt > *{min-width:0}
+  .fmt .pic{position:relative;background:var(--bg-3)}
+  .fmt .pic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .fmt .txt{padding:22px 26px;display:grid;gap:8px;align-content:center}
+  .fmt .txt small{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold)}
+  .fmt .txt h3{font-size:23px;line-height:1.2}
+  .fmt .txt p{color:var(--muted);font-size:15px;max-width:62ch}
+  .fmt .txt .our{font-size:13px;color:var(--ink);opacity:.8}
+
+  /* OFFICINA */
+  .shop{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .shop figure{margin:0;position:relative;border-radius:14px;overflow:hidden;aspect-ratio:3/4;background:var(--bg-3);max-width:100%}
+  .shop img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .shop figure::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(10,13,16,.9))}
+  .shop figcaption{position:absolute;left:16px;right:16px;bottom:14px;z-index:2;font-size:13px;color:var(--muted)}
+  .shop figcaption b{display:block;font-family:var(--serif);font-weight:400;font-size:19px;color:var(--ink)}
+  .visit{margin-top:18px;display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap;border:1px dashed rgba(201,169,106,.5);border-radius:16px;padding:20px 24px}
+  .visit p{color:var(--muted);max-width:72ch;font-size:15px}
+  .visit p b{color:var(--ink);font-weight:500}
+
+  /* PROCESSO */
+  .steps{display:grid;grid-template-columns:repeat(5,1fr);gap:0;border:1px solid var(--line);border-radius:16px;overflow:hidden}
+  .step{padding:22px 20px;border-right:1px solid var(--line);display:grid;gap:8px;align-content:start;min-width:0}
+  .step:last-child{border-right:0}
+  .step .n{font-family:var(--mono);font-size:12px;color:var(--gold)}
+  .step h4{font-size:19px;line-height:1.2}
+  .step p{font-size:13.5px;color:var(--muted)}
+  .wl{margin-top:16px;display:flex;gap:10px;flex-wrap:wrap}
+  .wl span{font-size:13px;border:1px solid var(--line);border-radius:100px;padding:7px 13px;color:var(--ink)}
+
+  /* CTA */
+  .cta{border:1px solid var(--line);border-radius:24px;padding:clamp(40px,7vw,80px) clamp(22px,5vw,64px);background:radial-gradient(80% 120% at 50% 0%,rgba(201,169,106,.14),transparent 60%),var(--bg-2);display:grid;grid-template-columns:1.2fr .8fr;gap:clamp(24px,4vw,56px);align-items:center}
+  .cta > *{min-width:0}
+  .cta h2{font-size:clamp(32px,4.8vw,60px);line-height:1.03}
+  .cta p{margin-top:16px;color:var(--muted);max-width:50ch}
+  .cta-actions{display:grid;gap:12px}
+  .cta-actions .btn{justify-content:center}
+  .mail{display:flex;align-items:center;justify-content:space-between;gap:10px;border:1px solid var(--line);border-radius:100px;padding:6px 6px 6px 18px;font-size:14px}
+  .mail code{font-family:var(--mono);font-size:13px;user-select:all;overflow-wrap:anywhere}
+  .mail button{font-family:var(--sans);font-size:12.5px;border:0;border-radius:100px;padding:9px 14px;background:rgba(245,242,236,.08);color:var(--ink);cursor:pointer}
+  .sign{margin-top:22px;font-family:var(--serif);font-style:italic;font-size:20px}
+  .sign span{display:block;font-family:var(--sans);font-style:normal;font-size:13px;color:var(--muted);margin-top:2px}
+  footer{padding-block:40px 56px;color:var(--muted);font-size:13px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+  footer a{color:var(--gold)}
+
+  @media(max-width:960px){
+    .hero,.head,.cta{grid-template-columns:1fr}
+    .hero-pic{aspect-ratio:4/3}
+    .facts{grid-template-columns:repeat(2,1fr)}
+    .probs{grid-template-columns:1fr}
+    .fmt{grid-template-columns:1fr}
+    .fmt .pic{aspect-ratio:16/9}
+    .shop{grid-template-columns:1fr 1fr}
+    .steps{grid-template-columns:1fr}
+    .step{border-right:0;border-bottom:1px solid var(--line)}
+    .step:last-child{border-bottom:0}
+  }
+  @media(max-width:520px){.shop{grid-template-columns:1fr}.shop figure{aspect-ratio:4/3}}
+  @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="top">
+    <div class="brand"><b>Show</b>factory</div>
+    <div class="for"><i></i><span id="forLine">Pagina riservata · Ninetynine, Roma</span></div>
+  </header>
+
+  <section class="hero" aria-labelledby="h1">
+    <div>
+      <p class="eyebrow">Il reparto produzione esterno di Ninetynine</p>
+      <h1 id="h1"></h1>
+      <p class="hello" id="hello"></p>
+      <div class="focus"><span id="focusLbl">Per te</span><p id="focusTxt"></p></div>
+      <div class="hero-actions">
+        <a class="btn btn-gold" href="#formati">Cosa costruiamo per voi ↓</a>
+        <a class="btn" href="#call">15 minuti di call</a>
+      </div>
+    </div>
+    <div class="hero-pic">
+      <img src="../assets/portfolio/duomo.jpg" alt="Struttura con ledwall in Piazza Duomo a Milano, costruita e montata da Showfactory">
+      <div class="stamp"><em>Costruito a Parma · montato dalle nostre squadre</em><b>Ledwall in Piazza Duomo</b><span>Struttura, ledwall e regia: tutto Showfactory, nessun service esterno.</span></div>
+    </div>
+  </section>
+
+  <div class="facts" aria-label="Showfactory in breve">
+    <div class="fact"><b>2</b><span>falegnamerie interne, a Parma e Forte dei Marmi</span></div>
+    <div class="fact"><b>0</b><span>subappalti: chi costruisce è chi monta</span></div>
+    <div class="fact"><b>1</b><span>referente per strutture, scenografie, arredi e ledwall</span></div>
+    <div class="fact"><b>22</b><span>anni di cantieri di Francesco, in Italia e in Europa</span></div>
+  </div>
+</div>
+
+<!-- PROBLEMI -->
+<section class="band" aria-labelledby="h-probs">
+  <div class="wrap">
+    <div class="head">
+      <h2 id="h-probs">Quattro problemi che un'agenzia come la vostra <em>conosce a memoria.</em></h2>
+      <p>Avete gestito 158.768 mq di allestimenti in 17 villaggi e 230 giorni di montaggi e smontaggi per il tour del Vespucci. Sapete meglio di chiunque quanta produzione c'è da gestire dietro progetti così. È lì che entriamo noi: una sola squadra per tutta la parte costruita.</p>
+    </div>
+    <div class="probs">
+      <article class="prob" data-g="event">
+        <div class="q"><small>Il problema</small><p>«Chi monta non è chi ha costruito, e in cantiere nessuno sa rispondere.»</p></div>
+        <div class="a"><small>Showfactory</small><h3>Stesse persone dal disegno all'ultima vite.</h3><p>Progettiamo, tagliamo il legno, saldiamo il ferro e montiamo con le nostre squadre. <strong>Una catena corta, che si gestisce con una telefonata.</strong></p></div>
+      </article>
+      <article class="prob" data-g="dir">
+        <div class="q"><small>Il problema</small><p>«Il fornitore parla con il cliente e la regia salta.»</p></div>
+        <div class="a"><small>Showfactory</small><h3>Il cliente resta vostro.</h3><p>Render e tavole con il vostro marchio, nessun contatto diretto se non lo volete voi. <strong>Noi costruiamo, montiamo e poi spariamo.</strong></p></div>
+      </article>
+      <article class="prob" data-g="art creative">
+        <div class="q"><small>Il problema</small><p>«In produzione l'idea si ridimensiona, e il render venduto non è quello montato.»</p></div>
+        <div class="a"><small>Showfactory</small><h3>Il render che avete venduto è quello che montiamo.</h3><p>Il nostro team R&amp;D prova materiali e finiture in officina prima di dire che non si può fare. <strong>Nessun passaggio di mano tra il vostro concept e la falegnameria.</strong></p></div>
+      </article>
+      <article class="prob" data-g="comm">
+        <div class="q"><small>Il problema</small><p>«Ledwall da un service, struttura da un altro, e l'incastro si scopre la notte prima.»</p></div>
+        <div class="a"><small>Showfactory</small><h3>Ledwall e regia nascono dentro la struttura.</h3><p>Li gestiamo internamente, quindi schermo e scenografia si disegnano insieme. <strong>Niente prove di incastro alle due di notte.</strong></p></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- FORMATI -->
+<section class="band" id="formati" aria-labelledby="h-fmt">
+  <div class="wrap">
+    <div class="head">
+      <h2 id="h-fmt">I vostri formati, <em>la nostra produzione.</em></h2>
+      <p>Partiamo da quello che fate voi: anteprime, degustazioni, piani industriali, attivazioni, istituzionale, fiere. Per ognuno, cosa costruiamo e un lavoro nostro che lo dimostra.</p>
+    </div>
+    <div class="formats">
+      <article class="fmt">
+        <div class="pic"><img src="../assets/portfolio/audi.jpg" alt="Padiglione Audi quattro sulla neve" loading="lazy"></div>
+        <div class="txt"><small>Anteprime e lanci di prodotto</small><h3>Il padiglione che fa da cornice alla macchina.</h3><p>Volumi su misura che reggono luci, schermi e il momento del reveal, montati anche dove un cantiere normale non arriva: sulla neve, in piazza, su una banchina.</p><p class="our">Lavoro nostro: padiglione Audi quattro in quota.</p></div>
+      </article>
+      <article class="fmt">
+        <div class="pic"><img src="../assets/portfolio/amarone-galleria.jpg" alt="Galleria storica a Verona allestita in rosso per Amarone Opera Prima" loading="lazy"></div>
+        <div class="txt"><small>Anteprime e grandi degustazioni</small><h3>Una galleria intera, vestita per una sera.</h3><p>Per Amarone Opera Prima, l'anteprima dell'Amarone del Consorzio Valpolicella, abbiamo trasformato una galleria storica di Verona: telai rivestiti in tessuto rosso, luci, percorsi tra ingresso, aperitivo, cena e banchi di degustazione. Il formato che conoscete dai vostri villaggi, con il vino al centro.</p><p class="our">Lavoro nostro: Amarone Opera Prima, Verona.</p></div>
+      </article>
+      <article class="fmt">
+        <div class="pic"><img src="../assets/portfolio/duomo.jpg" alt="Ledwall in Piazza Duomo a Milano" loading="lazy"></div>
+        <div class="txt"><small>Piani industriali e capital markets day</small><h3>Palco, ledwall e regia sotto un'unica responsabilità.</h3><p>Quando in sala ci sono investitori e stampa internazionale, lo schermo non può essere il pezzo di un altro fornitore. Struttura, ledwall e regia li gestiamo noi.</p><p class="our">Lavoro nostro: ledwall e struttura in Piazza Duomo, Milano.</p></div>
+      </article>
+      <article class="fmt">
+        <div class="pic"><img src="../assets/portfolio/moncler.jpg" alt="Pop-up Moncler Grenoble in alta quota" loading="lazy"></div>
+        <div class="txt"><small>Brand activation e villaggi itineranti</small><h3>Un kit costruito una volta, montato ovunque.</h3><p>Moduli pensati per viaggiare: si caricano sui bilici, si montano e si smontano a ogni tappa con la stessa qualità della prima.</p><p class="our">Lavoro nostro: pop-up Moncler Grenoble sulla neve.</p></div>
+      </article>
+      <article class="fmt">
+        <div class="pic"><img src="../assets/portfolio/gala.jpg" alt="Gala con lampadari e luci viola" loading="lazy"></div>
+        <div class="txt"><small>Istituzionale e gala</small><h3>Scenografie che reggono il protocollo.</h3><p>Allestimenti per cerimonie e cene di gala dove ogni dettaglio è fotografato: arredi, fondali, luci, anche con montaggi notturni.</p><p class="our">Lavoro nostro: gala con scenografia e luci.</p></div>
+      </article>
+      <article class="fmt">
+        <div class="pic"><img src="../assets/opt/stand_hero.jpg" alt="Stand fieristico su misura con pneumatici in esposizione" loading="lazy"></div>
+        <div class="txt"><small>Fiere per i vostri clienti</small><h3>Lo stand, con le pratiche per l'ente fiera già pronte.</h3><p>Progetto, disegni tecnici per l'approvazione dell'ente, produzione e montaggio. Il vostro account segue il cliente, noi seguiamo il padiglione.</p><p class="our">Lavoro nostro: stand su misura per un marchio di pneumatici agricoli.</p></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- OFFICINA -->
+<section class="band" aria-labelledby="h-shop">
+  <div class="wrap">
+    <div class="head">
+      <h2 id="h-shop">Il vostro reparto produzione <em>è a Parma.</em></h2>
+      <p>Niente foto di repertorio. Questo è dove nascono i progetti che firmate voi.</p>
+    </div>
+    <div class="shop">
+      <figure><img src="../assets/opt/welder.jpg" alt="Saldatore Showfactory davanti a una struttura in ferro" loading="lazy"><figcaption><b>Carpenteria metallica</b>Le strutture le saldiamo noi.</figcaption></figure>
+      <figure><img src="../assets/opt/fabrication.jpg" alt="Pannelli in legno lavorati in falegnameria" loading="lazy"><figcaption><b>Falegnameria</b>Taglio, assemblaggio, finiture.</figcaption></figure>
+      <figure><img src="../assets/opt/logistics.jpg" alt="Allestimento notturno con piattaforma aerea" loading="lazy"><figcaption><b>Montaggio</b>Le nostre squadre, anche di notte.</figcaption></figure>
+    </div>
+    <div class="visit">
+      <p><b>Venite a vederla.</b> Mezza giornata in falegnameria a Parma, con i vostri project manager: vedete come lavoriamo prima di affidarci un vostro lavoro.</p>
+      <a class="btn" href="#call">Organizziamo la visita →</a>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESSO -->
+<section class="band" aria-labelledby="h-steps">
+  <div class="wrap">
+    <div class="head">
+      <h2 id="h-steps">Come lavoriamo <em>con le agenzie.</em></h2>
+      <p>Cinque passaggi, sempre gli stessi, con un solo referente dall'inizio alla fine.</p>
+    </div>
+    <div class="steps">
+      <div class="step"><span class="n">1</span><h4>Brief</h4><p>Ci mandate concept, planimetria e data. Basta anche una call.</p></div>
+      <div class="step"><span class="n">2</span><h4>Render e preventivo</h4><p>Render 3D e preventivo voce per voce, con il vostro marchio.</p></div>
+      <div class="step"><span class="n">3</span><h4>Disegni tecnici</h4><p>Tavole per ente fiera o location, calcoli e permessi.</p></div>
+      <div class="step"><span class="n">4</span><h4>Produzione</h4><p>Falegnameria e carpenteria interne, pre-montaggio in officina.</p></div>
+      <div class="step"><span class="n">5</span><h4>Montaggio e smontaggio</h4><p>Le nostre squadre montano e smontano, con un solo referente in cantiere.</p></div>
+    </div>
+    <div class="wl"><span>Render con il vostro marchio</span><span>Nessun contatto diretto con il cliente</span><span>Italia ed Europa</span></div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="band" id="call" aria-labelledby="h-call">
+  <div class="wrap">
+    <div class="cta">
+      <div>
+        <h2 id="h-call"></h2>
+        <p id="ctaTxt">Una call per capire se c'è un progetto in arrivo su cui possiamo esservi utili già adesso. Se c'è, il brief lo leggiamo subito.</p>
+        <p class="sign">Francesco<span>Founder, Showfactory</span></p>
+      </div>
+      <div class="cta-actions">
+        <a class="btn btn-gold" id="waLink" href="https://wa.me/393791842927" target="_blank" rel="noopener">Scrivimi su WhatsApp →</a>
+        <div class="mail"><code id="mailAddr">francesco@showfactory.events</code><button type="button" id="copyMail">Copia</button></div>
+        <a class="btn" href="https://www.instagram.com/show__factory_/" target="_blank" rel="noopener">I nostri cantieri su Instagram ↗</a>
+        <a class="btn" href="https://www.showfactory.events" target="_blank" rel="noopener">Il sito Showfactory ↗</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap">
+  <footer>
+    <span>Pagina preparata per Ninetynine · non indicizzata</span>
+    <span>Showfactory · Parma · Forte dei Marmi · <a href="https://www.showfactory.events" target="_blank" rel="noopener">showfactory.events</a></span>
+  </footer>
+</div>
+
+<script>
+(function(){
+  /* ---------- Referenti: il link #nome personalizza la pagina ---------- */
+  var PEOPLE={
+    simone:{n:'Simone',r:'CEO',g:'dir'},
+    genny:{n:'Genny',r:'Managing Director',g:'dir'},
+    rita:{n:'Rita',r:'Art Director',g:'art'},
+    carmen:{n:'Carmen',r:'Art Director',g:'art'},
+    luca:{n:'Luca',r:'Creative Supervisor',g:'creative'},
+    ilaria:{n:'Ilaria',r:'Creative Supervisor',g:'creative'},
+    ginevra:{n:'Ginevra',r:'Digital Supervisor',g:'comm'},
+    paola:{n:'Paola',r:'Social & Communication Manager',g:'comm'},
+    jodie:{n:'Jodie',r:'Project Specialist',g:'event'},
+    martina:{n:'Martina',r:'Junior Event Manager',g:'event'}
+  };
+  var GROUPS={
+    dir:{h1:'Voi gestite progetti che non possono sbagliare.<br><em>Noi costruiamo la parte che si vede.</em>',
+         focus:'Un solo fornitore per strutture, scenografie, arredi e ledwall: una responsabilità, un contratto, un numero da chiamare.',cta:'15 minuti,<br><em>una sola domanda.</em>',ctaTxt:'Qual è il prossimo progetto con una produzione da gestire? Partiamo da quello.'},
+    art:{h1:'Il render che avete venduto<br><em>è quello che montiamo.</em>',
+         focus:'Disegniamo e costruiamo in casa: le finiture del tuo render le proviamo in officina, non le scopriamo in fiera.',cta:'Mandaci un render<br><em>difficile.</em>',ctaTxt:'Scegli quello che un fornitore ti ha detto che non si poteva fare: ti diciamo come lo costruiremmo.'},
+    creative:{h1:'Le idee non si ridimensionano<br><em>in produzione.</em>',
+         focus:'Il nostro team R&D cerca materiali e soluzioni prima di dire di no. Il prototipo lo facciamo in officina.',cta:'Portaci l\'idea<br><em>prima del preventivo.</em>',ctaTxt:'Coinvolgerci in fase di concept costa una call e risparmia una revisione.'},
+    comm:{h1:'Ledwall, regia e cantiere,<br><em>sotto lo stesso tetto.</em>',
+         focus:'Ledwall e regia interni, integrati nella struttura. E dal cantiere ti passiamo foto e video del backstage per i vostri canali.',cta:'Uno schermo, una struttura,<br><em>un solo fornitore.</em>',ctaTxt:'Raccontaci il prossimo progetto con contenuti su ledwall: lo disegniamo insieme alla scenografia.'},
+    event:{h1:'Il cliente arriva alle nove.<br><em>Lo stand è finito la sera prima.</em>',
+         focus:'Calendari chiari, squadre nostre e un solo referente in cantiere, quello che risponde anche alle sei del mattino.',cta:'Il prossimo montaggio<br><em>lo facciamo insieme?</em>',ctaTxt:'Mandami data e planimetria del prossimo evento: ti richiamo io.'}
+  };
+  var who=PEOPLE[(location.hash||'').replace('#','').toLowerCase()]||null;
+  var g=GROUPS[who?who.g:'dir'];
+  document.getElementById('h1').innerHTML=g.h1;
+  document.getElementById('hello').innerHTML=(who?'Ciao '+who.n+', ':'')+'Ninetynine è prima al mondo nella classifica BEA World. <strong>Showfactory è il fornitore che costruisce, monta e smonta i vostri progetti senza passarli a nessun altro</strong>: due falegnamerie, una carpenteria e i ledwall in casa, a Parma.';
+  document.getElementById('focusLbl').textContent=who?'Per '+who.n:'In breve';
+  document.getElementById('focusTxt').textContent=g.focus;
+  document.getElementById('h-call').innerHTML=g.cta;
+  document.getElementById('ctaTxt').textContent=g.ctaTxt;
+  if(who){document.getElementById('forLine').textContent='Pagina riservata · '+who.n+', '+who.r+' · Ninetynine';}
+  Array.prototype.forEach.call(document.querySelectorAll('.prob'),function(p){if(who&&p.dataset.g.split(' ').indexOf(who.g)>=0)p.classList.add('hl');});
+  var wa=document.getElementById('waLink');
+  wa.href='https://wa.me/393791842927?text='+encodeURIComponent('Ciao Francesco, sono '+(who?who.n+' di Ninetynine':'di Ninetynine')+': ho visto la pagina, sentiamoci.');
+
+
+  /* ---------- Copia email ---------- */
+  var cb=document.getElementById('copyMail'),addr=document.getElementById('mailAddr');
+  cb.addEventListener('click',function(){
+    function sel(){var r=document.createRange();r.selectNodeContents(addr);var s=window.getSelection();s.removeAllRanges();s.addRange(r);}
+    try{navigator.clipboard.writeText(addr.textContent).then(function(){cb.textContent='Copiata';},function(){sel();cb.textContent='Selezionata';});}catch(e){sel();cb.textContent='Selezionata';}
+  });
+  window.addEventListener('hashchange',function(){location.reload();});
+})();
+</script>
+</body>
+</html>
