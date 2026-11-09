@@ -308,7 +308,7 @@
       </div>
       <div class="cta-actions">
         <a class="btn btn-gold" id="waLink" href="https://wa.me/393791842927" target="_blank" rel="noopener">Scrivimi su WhatsApp →</a>
-        <div class="mail"><code id="mailAddr">francesco@showfactory.events</code><button type="button" id="copyMail">Copia</button></div>
+        <div class="mail"><code id="mailAddr">allestimenti@showfactory.events</code><button type="button" id="copyMail">Copia</button></div>
         <a class="btn" href="https://www.instagram.com/show__factory_/" target="_blank" rel="noopener">I nostri cantieri su Instagram ↗</a>
         <a class="btn" href="https://www.showfactory.events" target="_blank" rel="noopener">Il sito Showfactory ↗</a>
       </div>
@@ -326,18 +326,6 @@
 <script>
 (function(){
   /* ---------- Referenti: il link #nome personalizza la pagina ---------- */
-  var PEOPLE={
-    simone:{n:'Simone',r:'CEO',g:'dir'},
-    genny:{n:'Genny',r:'Managing Director',g:'dir'},
-    rita:{n:'Rita',r:'Art Director',g:'art'},
-    carmen:{n:'Carmen',r:'Art Director',g:'art'},
-    luca:{n:'Luca',r:'Creative Supervisor',g:'creative'},
-    ilaria:{n:'Ilaria',r:'Creative Supervisor',g:'creative'},
-    ginevra:{n:'Ginevra',r:'Digital Supervisor',g:'comm'},
-    paola:{n:'Paola',r:'Social & Communication Manager',g:'comm'},
-    jodie:{n:'Jodie',r:'Project Specialist',g:'event'},
-    martina:{n:'Martina',r:'Junior Event Manager',g:'event'}
-  };
   var GROUPS={
     dir:{h1:'Voi gestite progetti che non possono sbagliare.<br><em>Noi costruiamo la parte che si vede.</em>',
          focus:'Un solo fornitore per strutture, scenografie, arredi e ledwall: una responsabilità, un contratto, un numero da chiamare.',cta:'15 minuti,<br><em>una sola domanda.</em>',ctaTxt:'Qual è il prossimo progetto con una produzione da gestire? Partiamo da quello.'},
@@ -350,10 +338,10 @@
     event:{h1:'Il cliente arriva alle nove.<br><em>Lo stand è finito la sera prima.</em>',
          focus:'Calendari chiari, squadre nostre e un solo referente in cantiere, quello che risponde anche alle sei del mattino.',cta:'Il prossimo montaggio<br><em>lo facciamo insieme?</em>',ctaTxt:'Mandami data e planimetria del prossimo evento: ti richiamo io.'}
   };
-  var who=PEOPLE[(location.hash||'').replace('#','').toLowerCase()]||null;
+  var who=null;try{var mm=/[#&]r=([A-Za-z0-9_-]+)/.exec(location.hash);if(mm){var b=mm[1].replace(/-/g,'+').replace(/_/g,'/');while(b.length%4)b+='=';who=JSON.parse(decodeURIComponent(escape(atob(b))));if(!who||!who.n||!GROUPS[who.g])who=null;else{who.n=String(who.n).slice(0,40);who.r=String(who.r||'').slice(0,60);}}}catch(e){who=null;}
   var g=GROUPS[who?who.g:'dir'];
   document.getElementById('h1').innerHTML=g.h1;
-  document.getElementById('hello').innerHTML=(who?'Ciao '+who.n+', ':'')+'Ninetynine è prima al mondo nella classifica BEA World. <strong>Showfactory è il fornitore che costruisce, monta e smonta i vostri progetti senza passarli a nessun altro</strong>: due falegnamerie, una carpenteria e i ledwall in casa, a Parma.';
+  document.getElementById('hello').innerHTML=(who?'Ciao '+who.n.replace(/[<>&"]/g,'')+', ':'')+'Ninetynine è prima al mondo nella classifica BEA World. <strong>Showfactory è il fornitore che costruisce, monta e smonta i vostri progetti senza passarli a nessun altro</strong>: due falegnamerie, una carpenteria e i ledwall in casa, a Parma.';
   document.getElementById('focusLbl').textContent=who?'Per '+who.n:'In breve';
   document.getElementById('focusTxt').textContent=g.focus;
   document.getElementById('h-call').innerHTML=g.cta;
