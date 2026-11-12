@@ -105,7 +105,8 @@
   var nome=who&&who.n?String(who.n).slice(0,40):'',grp=who&&G[who.g]?who.g:'';
   var today=new Date();today.setHours(12,0,0,0);
   var next=null;(d.fiere||[]).forEach(function(x){if(!x.d)return;var t=new Date(x.d+'T12:00:00');var days=Math.round((t-today)/864e5);if(days>=0&&(!next||days<next.days))next={l:x.l,c:x.c,w:x.w,days:days};});
-  function work(k,cls){var w=W[k];return '<figure class="'+(cls||'work')+'"><img src="'+A+w.img+'" alt="'+esc(w.title)+'" loading="lazy"><figcaption><small>'+w.tag+'</small><b>'+w.title+'</b><span>'+w.cap+'</span></figcaption></figure>';}
+  function pic(p,alt,eager){var b=A+p.replace(/\.jpg$/,'');return '<img src="'+b+'-720.webp" srcset="'+b+'-720.webp 720w, '+b+'-1280.webp 1280w" sizes="(max-width:960px) 100vw, 50vw" alt="'+esc(alt)+'"'+(eager?' fetchpriority="high"':' loading="lazy" decoding="async"')+'>';}
+  function work(k,cls){var w=W[k];return '<figure class="'+(cls||'work')+'">'+pic(w.img,w.title)+'<figcaption><small>'+w.tag+'</small><b>'+w.title+'</b><span>'+w.cap+'</span></figcaption></figure>';}
   var fairHtml='';
   if(next){var hot=next.days<=45;var msg=hot?'Tempi stretti, ma se lo stand non è ancora chiuso possiamo ancora entrare in produzione: conviene sentirci questa settimana.':(next.days<=150?'È la finestra giusta per progettare e produrre senza correre.':'Chi progetta adesso sceglie materiali e soluzioni con calma.');
     fairHtml='<div class="fair'+(hot?' hot':'')+'"><div class="days">'+next.days+'<small>giorni</small></div><p>a <b>'+esc(next.l)+'</b><span> · '+esc(next.c)+', '+esc(next.w)+'</span><br>'+msg+'</p></div>';}
@@ -118,7 +119,7 @@
   +fairHtml
   +(grp?'<p class="hello" style="margin-top:14px;color:var(--ink)">'+G[grp]+'</p>':'')
   +'<div class="hero-actions"><a class="btn btn-gold" href="#lavori">I nostri lavori ↓</a><a class="btn" href="#call">15 minuti di call</a></div></div>'
-  +'<div class="hero-pic"><img src="'+A+heroW.img+'" alt="'+esc(heroW.title)+'"><div class="stamp"><em>Costruito a Parma · montato dalle nostre squadre</em><b>'+heroW.title+'</b><span>'+heroW.cap+'</span></div></div></section>'
+  +'<div class="hero-pic">'+pic(heroW.img,heroW.title,true)+'<div class="stamp"><em>Costruito a Parma · montato dalle nostre squadre</em><b>'+heroW.title+'</b><span>'+heroW.cap+'</span></div></div></section>'
   +'<div class="facts"><div class="fact"><b>2</b><span>falegnamerie interne, a Parma e Forte dei Marmi</span></div><div class="fact"><b>0</b><span>subappalti: chi costruisce è chi monta</span></div><div class="fact"><b>1</b><span>referente per strutture, arredi e ledwall</span></div><div class="fact"><b>22</b><span>anni di cantieri, in Italia e in Europa</span></div></div></div>'
   +'<section class="band"><div class="wrap"><div class="head"><h2>Quattro problemi che <em>conoscete bene.</em></h2><p>E come li risolviamo, con persone e officine nostre.</p></div><div class="probs">'
   +fam.probs.map(function(k){var p=P[k];return '<article class="prob"><div class="q"><small>Il problema</small><p>'+p.q+'</p></div><div class="a"><small>Showfactory</small><h3>'+p.h+'</h3><p>'+p.p+'</p></div></article>';}).join('')
